@@ -1,0 +1,97 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+    {
+      "type": "cppbuild",
+      "label": "Build Example",
+      "command": "/usr/bin/clang++",
+      "args": [
+        "-std=c++20",
+        "-fcolor-diagnostics",
+        "-fansi-escape-codes",
+        "-g",
+        "${workspaceFolder}/*.cpp",
+        "-o",
+        "${workspaceFolder}/${workspaceFolderBasename}_example"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "clang++ compiler"
+    },
+    {
+      "type": "shell",
+      "label": "Clean Example",
+      "command": "rm",
+      "args": [
+        "-rvf",
+        "${workspaceFolder}/${workspaceFolderBasename}_example",
+        "${workspaceFolder}/*.dSYM"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "remove example objects"
+    },
+    {
+      "type": "cppbuild",
+      "label": "Build Lib",
+      "command": "/usr/bin/clang++",
+      "args": [
+        "-std=c++20",
+        "-fcolor-diagnostics",
+        "-fansi-escape-codes",
+        "-fPIC",
+        "-c",
+        "${workspaceFolder}/${workspaceFolderBasename}.cpp",
+        "-o",
+        "${workspaceFolder}/${workspaceFolderBasename}.o"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Clang++: build object"
+    },
+    {
+      "type": "shell",
+      "label": "Clean Lib",
+      "command": "rm",
+      "args": [
+        "-rvf",
+        "${workspaceFolder}/${workspaceFolderBasename}.o"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "remove lib objects"
+    }
+  ]
+}
