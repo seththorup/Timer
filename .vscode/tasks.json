@@ -3,7 +3,7 @@
 	"tasks": [
     {
       "type": "cppbuild",
-      "label": "Build Example",
+      "label": "Build threadmanager Example",
       "command": "/usr/bin/clang++",
       "args": [
         "-std=c++20",
